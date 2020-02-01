@@ -138,6 +138,7 @@ img {
         display: inline-block;
         margin: 0 5px;
         font-weight: bold;
+        font-size: 14px;
         cursor: pointer;
     }
 }
@@ -380,3 +381,15 @@ footer {
     -ms-filter: drop-shadow(1px 3px 5px rgba(0, 0, 0, 0.2));
     filter: drop-shadow(1px 3px 5px rgba(0, 0, 0, 0.2));
   }
+
+// ふわっと表示させる
+.js-fade {
+    opacity : 0;
+    transform : translate(0, 45px);
+    transition : all 600ms;
+}
+
+.js-fade.effect-scroll {
+    opacity : 1;
+    transform : translate(0, 0);
+}
