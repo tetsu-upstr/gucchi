@@ -54,6 +54,7 @@ a {
     vertical-align: baseline;
     background: transparent;
     text-decoration: none;
+    color: #333333;
 }
 
 table {
@@ -109,13 +110,31 @@ img {
     margin: 0 auto;
 }
 
+//  水平線（区切り線）
+.text-divider {
+  display: flex;
+  align-items: center;
+}
+.text-divider::before,
+.text-divider::after {
+  content: '';
+  height: 1px;
+  background-color: #333;
+  flex-grow: 1;
+}
+.text-divider::before {
+  margin-right: 1rem;
+}
+.text-divider::after {
+  margin-left: 1rem;
+}
+
 @media (min-width: 1024px) {
     .img--concept {
         max-height: 800px;
         max-width: 1000px;
 }
 }
-
 
 .max-width1000 {
     max-width: 1000px;
@@ -249,7 +268,6 @@ img {
 .section-title {
     font-size: 20px;
     padding: 10px;
-    border-bottom: solid 1px #333333;
 }
 @media (min-width: 768px) {
     .section-title {
@@ -277,8 +295,6 @@ img {
         font-size: 24px;
     }
 }
-
-
 
 /* シェフ写真を丸く切り抜く */
 .trim-circle {
@@ -324,14 +340,18 @@ img {
     }
 }
 
+/* スマホ(751以内）の場合、電話番号リンクを有効にする */
+@media(min-width: 751px) {
+    a[href*="tel:"] {
+        pointer-events: none;
+        cursor: default;
+        text-decoration: none;
+    }
+}
+
 
 .infomation {
     text-align: left;
-}
-
-.tel {
-    color: #333333;
-    cursor: pointer;
 }
 
 .fa-phone {
